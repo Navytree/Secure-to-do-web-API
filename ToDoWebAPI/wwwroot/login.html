@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Log into application</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <h3>Put your login</h3>
+    <input type="text" id="put-name" placeholder="Login">
+    <hr>
+    <h3>Put your password</h3>
+    <input type="password" id="put-password" placeholder="Password">
+    <hr>
+    <button onclick="LoginToAccount()" aria-label="Login">Log in</button>
+
+    <hr>
+    <h3>No account? Make a new one!</h3>
+    <button onclick="GoToRegister()" aria-label="GTRegister">Go to register</button>
+
+
+    <script src="js/login.js" asp-append-version="true"></script>
+
+
+</body>
+</html>

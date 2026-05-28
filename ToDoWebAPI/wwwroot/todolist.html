@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>To Do List</title>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <h1>Hello <span id="display-user"></span> This is your to do list :D</h1>
+
+    <h2>ToDo List: </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Date to</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="todolist">
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+        <h3>Add ToDo</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="addTodo()">
+            <input type="text" id="add-name" required placeholder="Name">
+            <span id="add-name-error" style="color: red; display: none;">Name is required!</span>
+            <input type="date" id="add-date" placeholder="To">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+
+
+    <div id="editForm" style="display:none;">
+        <h3>Edit ToDo</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="editTodo()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name" placeholder="Name">
+            <input type="date" id="edit-date" placeholder="To">
+            <input type="checkbox" id="edit-done" name="done" value="0">
+            <label for="done">ToDo status</label><br>
+            <input type="submit" value="Save changes">
+        </form>
+    </div>
+
+    <hr>
+
+    <h1>History</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Date to</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="history">
+        </tbody>
+    </table>
+
+    <h3>Log out</h3>
+    <button onclick="logOut()" aria-label="Log out">Log out</button>
+
+    <script src="js/todolist.js" asp-append-version="true"></script>
+
+</body>
+</html>

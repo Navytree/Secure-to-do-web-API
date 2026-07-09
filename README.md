@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
+* [Live Demo](#live-demo)
 * [Setup](#setup)
 
 ## General info
@@ -23,6 +24,8 @@ This project is an advanced To-Do list application designed with a strong focus 
 * **Dynamic Lifecycle Management & History:** Completed or overdue tasks automatically transition into a historical state. The UI dynamically grants edit/delete permissions based on task state, enforcing strict domain validation rules.
 * **Due Date Extensions:** Provides flexible task management by allowing users to extend deadlines directly on existing domain models instead of forcing redundant task creation.
 
+## Live Demo
+App is deployed and avaliable here [http://securetodo.runasp.net/login.html](http://securetodo.runasp.net/login.html)
 
 ## Setup
 To run this project locally, follow these steps:

@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -7,6 +8,11 @@ namespace ToDoUserWebAPI.Models
 {
     public class TokenService : ITokenService
     {
+        private readonly IConfiguration _config;
+        public TokenService(IConfiguration config)
+        {
+            _config = config;
+        }
         public string CreateJwtToken(User user)
         {
             var claims = new List<Claim>
@@ -15,7 +21,9 @@ namespace ToDoUserWebAPI.Models
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SuperTajneHasloKtoreMaMinimum32Znaki!"));
+            var jwtKey = _config["Api:IssuerSigningKey"];
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var tokenOptions = new JwtSecurityToken( 

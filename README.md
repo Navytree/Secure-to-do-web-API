@@ -16,6 +16,7 @@ This project is an advanced To-Do list application designed with a strong focus 
 * **Security:** JWT Bearer Authentication, Custom Password Salting & Hashing
 * **Frontend:** Dynamic JavaScript (ES6+), HTML5
 * **Database:** SQL Server
+* **Deployment & Hosting:** MonsterASP.NET (production environment configuration, cloud database migration, self-contained win-x64 application deployment)
 
 ## Features
 * **Advanced Password Hashing:** Implemented secure cryptographic password storage utilizing salting techniques. This ensures unique database hashes even for identical plain-text passwords, preventing rainbow table attacks.
